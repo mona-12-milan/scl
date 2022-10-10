@@ -64,3 +64,35 @@ value = 7;
 # printing the value
 print("\nValue at", value, "is",
       round(applyFormula(value, x, y, n), 2))
+
+
+'''
+# x = [300, 304, 305, 307]
+# y = [2.4771, 2.4829, 2.4843, 2.4871]
+# X = 301
+
+x = [2, 2.5, 3]
+y = [0.69315, 0.91629, 1.09861]
+X = 2.7
+
+n = len(x)
+table = []
+table.append(y)
+
+for i in range(n - 1):
+    values = []
+    for j in range(len(table[i]) - 1):
+        value = (table[i][j + 1] - table[i][j]) / (x[j + i + 1] - x[j])
+        values.append(value)
+    table.append(values)
+
+Y = 0
+
+for i in range(len(table)):
+    prod = 1
+    for j in range(i):
+        prod *= (X - x[j])
+    Y += prod * table[i][0]
+
+print(Y)
+'''

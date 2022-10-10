@@ -1,37 +1,10 @@
-#code yet to come
+#newtons forward diffrentiation
 from sympy import *
 def fact(n):
     factorial = 1
     for i in range(1, n + 1):
         factorial *= i
     return factorial
-#backward
-x = [1891, 1901, 1911, 1921, 1931]
-y = [46, 66, 81, 93, 101]
-X = 1925
-
-h = x[1] - x[0]
-p = (X - x[len(x) - 1]) / h
-
-table = []
-table.append(y)
-for i in range(len(x) - 1):
-    column = []
-    for j in range(1, len(table[i])):
-        column.append(table[i][j] - table[i][j - 1])
-    table.append(column)
-
-Y = 0
-
-for i in range(len(table)):
-    prod = 1
-    for j in range(i):
-        prod *= (p + j)
-    Y += prod * table[i][-1] / fact(i)
-
-print(Y)
-
-#forward
 x = [0.0, 0.1, 0.2, 0.3, 0.4]
 y = [1.0000, 0.9975, 0.9900, 0.9776, 0.8604]
 X = 0
